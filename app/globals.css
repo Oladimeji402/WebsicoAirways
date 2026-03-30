@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --color-maroon: #8e2157;
+  --color-navy: #0a0f1e;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #0a0f1e;
+  color: #fff;
+  font-family: system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0a0f1e; }
+::-webkit-scrollbar-thumb { background: #8e2157; border-radius: 3px; }
+
+/* Reusable classes */
+.glass {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.btn-maroon {
+  background: linear-gradient(135deg, #8e2157, #c0396e);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.btn-maroon:hover { opacity: 0.88; transform: scale(1.03); }
+
+.btn-ghost {
+  background: rgba(255,255,255,0.07);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.15);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.12); }
+
+.gradient-text {
+  background: linear-gradient(135deg, #fff 0%, #e0a0c0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+input, select {
+  outline: none;
+  font-family: inherit;
+  /* Prevent iOS zoom on focus */
+  font-size: max(16px, 0.85rem);
+}
+input:focus, select:focus {
+  border-color: #8e2157 !important;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* Touch target minimum size */
+button, a {
+  min-height: 44px;
+  min-width: 44px;
+}
+button[style*="height: 4px"],
+button[style*="width: 8px"],
+button[style*="width: 32px"] {
+  min-height: unset;
+  min-width: unset;
+}
