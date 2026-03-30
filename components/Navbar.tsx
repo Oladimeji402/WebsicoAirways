@@ -109,14 +109,14 @@ export default function Navbar() {
           {/* Desktop links */}
           <div style={{ display: "flex", alignItems: "center", gap: 28 }} className="desktop-nav">
             {/* Explore */}
-            <div onMouseEnter={() => setExploreOpen(true)} onMouseLeave={() => setExploreOpen(false)}>
+            <div style={{ display: "flex", alignItems: "center" }} onMouseEnter={() => setExploreOpen(true)} onMouseLeave={() => setExploreOpen(false)}>
               <button style={{ background: "none", border: "none", color: "rgba(255,255,255,0.75)", fontSize: "0.9rem", cursor: "pointer", display: "flex", alignItems: "center", gap: 4, padding: "8px 0" }}>
                 Explore <ChevronDown size={14} style={{ transition: "transform 0.2s", transform: exploreOpen ? "rotate(180deg)" : "rotate(0)" }} />
               </button>
             </div>
 
             {/* Book */}
-            <div style={{ position: "relative" }} onMouseEnter={() => setBookOpen(true)} onMouseLeave={() => setBookOpen(false)}>
+            <div style={{ position: "relative", display: "flex", alignItems: "center" }} onMouseEnter={() => setBookOpen(true)} onMouseLeave={() => setBookOpen(false)}>
               <button style={{ background: "none", border: "none", color: "rgba(255,255,255,0.75)", fontSize: "0.9rem", cursor: "pointer", display: "flex", alignItems: "center", gap: 4, padding: "8px 0" }}>
                 Book <ChevronDown size={14} style={{ transition: "transform 0.2s", transform: bookOpen ? "rotate(180deg)" : "rotate(0)" }} />
               </button>
@@ -140,7 +140,7 @@ export default function Navbar() {
             </div>
 
             {navLinks.map((link) => (
-              <a key={link} href="#" style={{ color: "rgba(255,255,255,0.75)", fontSize: "0.9rem", textDecoration: "none", transition: "color 0.2s" }}
+              <a key={link} href="#" style={{ color: "rgba(255,255,255,0.75)", fontSize: "0.9rem", textDecoration: "none", transition: "color 0.2s", display: "flex", alignItems: "center" }}
                 onMouseEnter={e => (e.currentTarget.style.color = "#fff")}
                 onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.75)")}>
                 {link}
